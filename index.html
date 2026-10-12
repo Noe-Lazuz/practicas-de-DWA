@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio de prácticas de Diseño Web Adaptable - Noé Benjamín Garmendia Lazo (U20241208)">
+  <title>Prácticas de DWA — Noé Garmendia (U20241208)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --fondo: #0f1a24;
+      --superficie: #16232f;
+      --borde: #24384a;
+      --texto: #e8eef4;
+      --suave: #93a7b8;
+      --acento: #4ea8de;
+      --acento-2: #7ee0b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(78, 168, 222, 0.18), transparent 40rem),
+        radial-gradient(circle at 90% 10%, rgba(126, 224, 184, 0.12), transparent 35rem),
+        var(--fondo);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+    .wrap { width: min(1080px, calc(100% - 3rem)); margin-inline: auto; }
+    header { padding: 4.5rem 0 2.5rem; }
+    .eyebrow {
+      display: inline-block; margin-bottom: 1rem; padding: 0.35rem 0.8rem;
+      border: 1px solid var(--borde); border-radius: 999px;
+      color: var(--acento-2); font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    h1 { margin: 0 0 0.6rem; font-size: clamp(2.1rem, 5vw, 3.4rem); line-height: 1.05; letter-spacing: -0.03em; }
+    h1 span { color: var(--acento); }
+    .lead { max-width: 620px; margin: 0; color: var(--suave); font-size: 1.08rem; }
+    .ficha {
+      display: flex; flex-wrap: wrap; gap: 0.6rem 2rem; margin-top: 1.6rem;
+      padding: 1rem 1.25rem; border: 1px solid var(--borde); border-radius: 16px;
+      background: rgba(22, 35, 47, 0.6); font-size: 0.92rem;
+    }
+    .ficha div { color: var(--suave); }
+    .ficha strong { display: block; color: var(--texto); font-size: 1rem; }
+    main { padding-bottom: 4rem; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+    .card {
+      display: flex; flex-direction: column; gap: 0.5rem;
+      padding: 1.6rem; border: 1px solid var(--borde); border-radius: 20px;
+      background: linear-gradient(180deg, var(--superficie), #131f2a);
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+    .card:hover { transform: translateY(-3px); border-color: #33546b; }
+    .card__num { color: var(--acento); font-weight: 800; font-size: 0.85rem; letter-spacing: 0.1em; }
+    .card h2 { margin: 0.2rem 0 0.3rem; font-size: 1.35rem; }
+    .card p { margin: 0 0 1rem; color: var(--suave); font-size: 0.95rem; }
+    .links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: auto; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1rem;
+      border-radius: 10px; font-weight: 700; font-size: 0.9rem; text-decoration: none;
+      background: var(--acento); color: #06202f; border: 1px solid var(--acento);
+    }
+    .btn--ghost { background: transparent; color: var(--texto); border-color: var(--borde); }
+    .btn:hover { filter: brightness(1.08); }
+    footer {
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;
+      padding: 2rem 0 3rem; border-top: 1px solid var(--borde); color: var(--suave); font-size: 0.88rem;
+    }
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: 1fr; }
+      header { padding-top: 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <span class="eyebrow">Diseño Web Adaptable · Sección A</span>
+    <h1>Portafolio de prácticas de <span>DWA</span></h1>
+    <p class="lead">Colección de prácticas de laboratorio: CSS avanzado, optimización de rendimiento web, JavaScript, DOM y eventos.</p>
+
+    <div class="ficha">
+      <div>Estudiante<strong>Noé Benjamín Garmendia Lazo</strong></div>
+      <div>Código<strong>U20241208</strong></div>
+      <div>Materia<strong>Diseño Web Adaptable · Sección A</strong></div>
+      <div>Docente<strong>Ing. Alberto Manases Turcios Ortez</strong></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="grid">
+      <article class="card">
+        <span class="card__num">PRÁCTICA 04</span>
+        <h2>Bosque Alto — Fondos, patrones y sprites CSS</h2>
+        <p>Fondos con overlay (fondos múltiples), patrón 100% CSS con gradientes y un CSS Sprite de 3 íconos.</p>
+        <div class="links">
+          <a class="btn" href="Practica%204%20de%20DWA/index-4.html">Ver práctica</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="card__num">PRÁCTICA 05</span>
+        <h2>AstroBitácora — Optimización del rendimiento web</h2>
+        <p>Auditoría con Lighthouse: comparación de una versión base frente a una optimizada (WebP, lazy loading, defer, minificación).</p>
+        <div class="links">
+          <a class="btn" href="Practica%205%20de%20DWA/optimizado/index.html">Versión optimizada</a>
+          <a class="btn btn--ghost" href="Practica%205%20de%20DWA/base/index.html">Versión base</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="card__num">PRÁCTICA 06</span>
+        <h2>Catálogo interactivo — JavaScript, DOM y eventos</h2>
+        <p>Selección de elementos del DOM, manejo de clics con addEventListener y mostrar/ocultar paneles con classList.</p>
+        <div class="links">
+          <a class="btn" href="Practica%206%20de%20DWA/index.html">Ver práctica</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="card__num">PRÁCTICA 07</span>
+        <h2>Monitor de riego — Variables y funciones</h2>
+        <p>Funciones reutilizables, parámetros por defecto, rest parameters y generación de interfaz con template literals.</p>
+        <div class="links">
+          <a class="btn" href="Practica%207%20de%20DWA/index.html">Ver práctica</a>
+        </div>
+      </article>
+    </div>
+
+    <footer>
+      <span>© 2026 · Noé Benjamín Garmendia Lazo · U20241208</span>
+      <a class="btn btn--ghost" href="https://github.com/Noe-Lazuz/practicas-de-DWA">Ver repositorio en GitHub</a>
+    </footer>
+  </main>
+</body>
+</html>
