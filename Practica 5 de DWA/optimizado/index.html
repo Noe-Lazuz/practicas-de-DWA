@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AstroBitácora - Diario de divulgación astronómica. Observación del cielo, astrofotografía y talleres.">
+    <title>AstroBitácora - Divulgación Astronómica | DWA Práctica 5</title>
+    <!-- VERSIÓN OPTIMIZADA -->
+    <!-- Preconnect: establece conexión temprana con los orígenes de las fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- display=swap evita FOIT (texto invisible mientras carga la fuente) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Sora:wght@700&display=swap" rel="stylesheet">
+    <!-- CSS minificado (48% menos bytes) -->
+    <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+
+    <!-- HEADER CON NAVEGACIÓN -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="header__logo" aria-label="Inicio">
+                <span class="header__logo-icon">&#128752;</span> Astro<span>Bitácora</span>
+            </a>
+            <nav class="header__nav" aria-label="Navegación principal">
+                <ul class="header__menu">
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#observatorio">Observatorio</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#footer">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="header__toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO - Above the fold, SIN loading="lazy", con fetchpriority="high" -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <p class="hero__badge">Bits del universo &#10024;</p>
+                <h1>Cada noche el cielo cuenta una historia</h1>
+                <p>AstroBitácora es tu diario de divulgación astronómica: observación, astrofotografía y ciencia ciudadana desde El Salvador.</p>
+                <a href="#galeria" class="btn btn--primary">Explorar la galería</a>
+                <a href="#observatorio" class="btn btn--ghost">Ver observatorio</a>
+            </div>
+            <div class="hero__image">
+                <!--
+                    WebP, tamaño real 800x600 (se muestra a ese tamaño),
+                    width + height para reservar espacio y evitar CLS,
+                    fetchpriority=high (elemento LCP) y SIN lazy.
+                -->
+                <img
+                    src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=75&w=800&h=600&fit=crop&format=webp"
+                    alt="La Tierra vista desde el espacio al amanecer"
+                    width="800"
+                    height="600"
+                    fetchpriority="high"
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- OBSERVATORIO -->
+    <section id="observatorio" class="observatorio">
+        <div class="container">
+            <h2 class="section-title">Nuestro Observatorio</h2>
+            <p class="section-subtitle">Tres frentes para acercar el cosmos a tu pantalla.</p>
+            <div class="observatorio__grid">
+
+                <article class="card">
+                    <div class="card__icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                    </div>
+                    <h3 class="card__title">Observación Planetaria</h3>
+                    <p class="card__text">Martes y viernes observamos Júpiter, Saturno y la Luna con telescopios comunitarios.</p>
+                </article>
+
+                <article class="card">
+                    <div class="card__icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>
+                        </svg>
+                    </div>
+                    <h3 class="card__title">Astrofotografía</h3>
+                    <p class="card__text">Talleres de fotografía de cielo profundo: nebulosas, cúmulos y vía láctea.</p>
+                </article>
+
+                <article class="card">
+                    <div class="card__icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="card__title">Divulgación y Talleres</h3>
+                    <p class="card__text">Charlas, seminarios y ciencia ciudadana para escuelas y comunidades.</p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA - Con lazy loading + decoding async -->
+    <section id="galeria" class="galeria">
+        <div class="container">
+            <h2 class="section-title">Galería del Cosmos</h2>
+            <p class="section-subtitle">Cielo profundo capturado por nuestra red de astrofotógrafos.</p>
+            <div class="galeria__grid">
+
+                <figure class="galeria__item">
+                    <!-- WebP 600x400, width/height, lazy + decoding async (below the fold) -->
+                    <img
+                        src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=75&w=600&h=400&fit=crop&format=webp"
+                        alt="Dos galaxias en colisión capturadas por el telescopio Hubble"
+                        width="600"
+                        height="400"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <figcaption>Fusión de Galaxias</figcaption>
+                </figure>
+
+                <figure class="galeria__item">
+                    <img
+                        src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?q=75&w=600&h=400&fit=crop&format=webp"
+                        alt="Cielo estrellado con la Vía Láctea asomando en la noche"
+                        width="600"
+                        height="400"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <figcaption>Noche Estrellada</figcaption>
+                </figure>
+
+                <figure class="galeria__item">
+                    <img
+                        src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=75&w=600&h=400&fit=crop&format=webp"
+                        alt="Planeta Tierra con la red de comunicaciones espaciales"
+                        width="600"
+                        height="400"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <figcaption>Órbita Terrestre</figcaption>
+                </figure>
+
+                <figure class="galeria__item">
+                    <img
+                        src="https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?q=75&w=600&h=400&fit=crop&format=webp"
+                        alt="Cohete SpaceX despegando rumbo al espacio"
+                        width="600"
+                        height="400"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <figcaption>Lanzamiento Espacial</figcaption>
+                </figure>
+
+                <figure class="galeria__item">
+                    <img
+                        src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=75&w=600&h=400&fit=crop&format=webp"
+                        alt="Planeta vecino del sistema solar"
+                        width="600"
+                        height="400"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <figcaption>Planeta Vecino</figcaption>
+                </figure>
+
+                <figure class="galeria__item">
+                    <img
+                        src="https://images.unsplash.com/photo-1522030299830-16b8d3d049fe?q=75&w=600&h=400&fit=crop&format=webp"
+                        alt="La Luna, nuestro satélite natural"
+                        width="600"
+                        height="400"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <figcaption>La Luna</figcaption>
+                </figure>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__info">
+                    <h3>AstroBitácora</h3>
+                    <p>Diario de divulgación astronómica — Diseño Web Adaptable, Práctica 5.</p>
+                </div>
+                <div class="footer__info">
+                    <h4>Datos del Estudiante</h4>
+                    <p><strong>Nombre:</strong> Noé Benjamín Garmendia Lazo</p>
+                    <p><strong>Código:</strong> U20241208</p>
+                </div>
+                <div class="footer__info">
+                    <h4>Materia</h4>
+                    <p><strong>Sección:</strong> A</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 · AstroBitácora · Práctica 5 - Auditoría y optimización del rendimiento web</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script con defer: descarga en paralelo y se ejecuta después de parsear el HTML,
+         sin bloquear el render del contenido visible -->
+    <script src="js/main.js" defer></script>
+
+</body>
+</html>
